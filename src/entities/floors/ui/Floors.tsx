@@ -9,7 +9,10 @@ import {
 
 function Floors() {
   const { setCalledFloor } = useContext(AppContext);
-  const floorsList = useMemo(() => [...Array(8).keys()].map((i) => i + 1), []);
+  const floorsList = useMemo(
+    () => [...Array(8).keys()].map((i) => i + 1).reverse(),
+    []
+  );
 
   const callElevator = useCallback(
     (floor: number) => () => {
@@ -20,7 +23,7 @@ function Floors() {
 
   return (
     <FloorsContainer>
-      {floorsList.reverse().map((item) => (
+      {floorsList.map((item) => (
         <Floor key={item}>
           <FloorNumber>{item}</FloorNumber>
           <FloorButton onClick={callElevator(item)}>Call elevator</FloorButton>
