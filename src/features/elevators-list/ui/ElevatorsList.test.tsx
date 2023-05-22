@@ -9,4 +9,12 @@ describe("ElevatorsList", () => {
 
     screen.debug();
   });
+
+  it("It shoud be 2 elevators", () => {
+    render(<ElevatorsList />);
+
+    const element = screen.queryAllByTestId("elevator");
+
+    expect(element.length).toBe(2);
+  });
 });

@@ -46,7 +46,10 @@ function ElevatorsList() {
   return (
     <ElevatorsListContainer>
       {elevators.map((item) => (
-        <Elevator key={item.id} currentFloor={item.currentFloor} />
+        <Elevator
+          key={item.id}
+          currentFloor={item.currentFloor}
+        />
       ))}
     </ElevatorsListContainer>
   );

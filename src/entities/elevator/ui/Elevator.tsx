@@ -7,7 +7,7 @@ interface Props {
 
 function Elevator({ currentFloor }: Props) {
   return (
-    <ElevatorContainer currentfloor={currentFloor}>
+    <ElevatorContainer data-testid={`elevator`} currentfloor={currentFloor}>
       <ElevatorImage src={elevatorImage} alt="Elevator" />
     </ElevatorContainer>
   );
